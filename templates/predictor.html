@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>What's My Age Again - Result</title>
-  <link rel="stylesheet" href="./styles/index.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
 </head>
 <body class="results">
   <main>
     <div class="column column-left">
       <div class="container">
-        <img class="image" src="/result/*" alt="Predicted Image" width="500" height="333">
+        <img class="image" src="{{ path }}" alt="Predicted Image"/>
       </div>
     </div>
     <div class="column column-right">
       <div class="container">
         <h1 class="title">What's My<br />Age Again</h1>
-        <h2 class="subtitle">The age is</h2>
+        <h2 class="subtitle">Age prediction</h2>
         <p class="age-value">{{ pred }}</p>
         <a class="btn-do-again" href="/">‹ Do it again?</a>
       </div>

@@ -125,6 +125,7 @@ main {
 .results .title {
   font-size: 24px;
   opacity: .6;
+  margin-bottom: 40px;
 }
 
 .results .subtitle {
@@ -132,9 +133,9 @@ main {
 }
 
 .results .age-value {
-  font-size: 170px;
+  font-size: 54px;
   font-weight: bold;
-  line-height: 136px;
+  line-height: 64px;
   margin: 0;
 }
 

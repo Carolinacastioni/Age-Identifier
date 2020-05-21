@@ -26,5 +26,5 @@ def agePrediction(path, modelo_json, modelo_h5):
     final_face = face.reshape(1,48, 48, 1)
     result = model.predict(final_face)
     itemindex = np.where(result == np.max(result))
-    pred = (f"Probability: {str(round(np.max(result)*100,2))}% {CLASSES[itemindex[1][0]]}")
+    pred = (f"{str(round(np.max(result)*100))}% {CLASSES[itemindex[1][0]]}")
     return pred

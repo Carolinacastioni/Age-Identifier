@@ -11,7 +11,7 @@ modelo_h5 = 'Model_0.7313541173934937_18-22-26.h5'
 app = Flask(__name__)
 
 # Carpeta de subida
-app.config['UPLOAD_FOLDER'] = 'result'
+app.config['UPLOAD_FOLDER'] = 'static/upload'
 
  # renderiamos la plantilla "index.html"
 @app.route("/")
@@ -30,7 +30,7 @@ def uploader():
     # Aplicamos el modelo en la imagen"
     img = os.path.join(app.config['UPLOAD_FOLDER'], filename)
     pred = pre.agePrediction(img,modelo_json, modelo_h5)
-    return render_template("predictor.html", pred=pred)
+    return render_template("predictor.html", pred=pred, path=img)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=3500, debug=True)
