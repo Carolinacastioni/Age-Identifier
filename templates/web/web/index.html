@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What's My Age Again</title>
+  <link rel="stylesheet" href="./styles/index.css">
+</head>
+<body>
+  <main>
+    <div class="column column-left">
+      <div class="container">
+        <h1 class="title">What's My<br />Age Again</h1>
+        <h2 class="subtitle">Age Identifier</h2>
+        <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+        <form action="/upload" id="form-age" method="POST" enctype="multipart/form-data">
+          <div id="file-dispatch" class="file-input-container">
+            <div class="file-input-filename">Choose file...</div>
+            <div class="file-input-browse">Browse</div>
+          </div>
+          <input accept="jpg" id="file-input-hidden" type="file" name="archivo" />
+          <input id="btn-submit" type="submit" />
+        </form>
+      </div>
+    </div>
+    <div class="column column-right">
+      <div class="container">
+        <img class="image" src="images/image1.jpg" />
+      </div>
+    </div>
+  </main>
+  <script>
+    (() => {
+      
+      const fileDispatch = document.getElementById('file-dispatch')
+      const fileInput = document.getElementById('file-input-hidden')
+      const fileInputName = document.getElementsByClassName('file-input-filename')[0]
+      const btnSubmit = document.getElementById('btn-submit')
+      const formAge = document.getElementById('form-age')
+
+      fileDispatch.addEventListener('click', function () {
+        fileInput.click()
+        fileInput.addEventListener('change', function (event) {
+          fileInputName.innerHTML = this.files[0].name
+        })
+      })
+
+      btnSubmit.addEventListener('click', function () {
+        this.formAge.submit()
+      })
+
+    })()
+  </script>
+</body>
+</html>
